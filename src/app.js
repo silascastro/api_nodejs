@@ -1,7 +1,7 @@
 'use strict'
 const express = require('express');
 const dotenv = require('dotenv');
-
+const logger = require('morgan');
 const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
@@ -26,7 +26,7 @@ const product = require('./routes/product');
 const customer = require('./routes/customer');
 
 
-
+app.use(logger());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false

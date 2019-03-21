@@ -4,9 +4,9 @@ const http = require('http');
 const debug = require('debug')('app:server');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+
+
 const port = normalizePort(process.env.PORT || '3000');
-
-
 
 const server = http.createServer(app);
 
