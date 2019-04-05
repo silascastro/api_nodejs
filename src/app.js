@@ -33,7 +33,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-//app.use('/', index);
 app.use('/',index);
 app.use('/products', product);
 app.use('/customers',customer);

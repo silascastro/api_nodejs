@@ -12,7 +12,7 @@ const schema = new Schema({
     },
     slug: {
         type: String,
-        required: [true, 'slug é requerido'],
+        required: [false, 'slug é requerido'],
         trim: true,
         index: true,
         unique: true
@@ -21,6 +21,10 @@ const schema = new Schema({
         type: String,
         required: [true, 'description é requerido'],
         trim: true
+    },
+    productImage: {
+        type: String,
+        required: [true, 'imagem do produto é requerida']
     },
     price: {
         type: Number,

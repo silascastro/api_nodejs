@@ -49,8 +49,15 @@ exports.post = async (req, res, next) => {
         res.status(400).send(contract.errors());
     }
 
+    console.log(req.file.path);
+
     try {
-        await repository.create(req.body);
+        await repository.create({
+            title: req.body.title,
+            productImage: req.file.path,
+            description: req.body.description,
+            price: req.body.price,
+        });
         res.status(201).send('Produto cadastrado com sucesso');
     } catch (error) {
         res.status(500).send({
